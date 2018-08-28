@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns:ims="http://itunes.apple.com/rss" xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+<booklist>
+  <book>
+    <title name="ジャンル１">数学読本〈２〉 簡単な関数 平面図形と式 指数関数・対数関数 三角関数</title>
+    <description>1次関数、2次関数、分数関数などの関数についての初歩から始め、数式の座標による表わし方に進み、指数関数・対数関数・三角関数に入ります。（「BOOK」データベースより）</description>
+    <keyword>数学</keyword>
+    <keyword>関数</keyword>
+    <ims:img>1.jpg</ims:img>
+    <ims:img2>abc.jpg</ims:img2>
+  </book>
+  <book>
+    <title name="ジャンル２">数学入門〈上〉</title>
+    <description>数学は試験のためにだけ必要なもの、卒業と同時にさっぱり忘れてしまうものではなかったか。しかし今日数学はあらゆる分野に活用されている。現代社会に活動するすべての日本人に必要な数学の知識を、日常生活の論理に定着させて分りやすく説き、会社経営や商品販売は勿論、家庭生活にも豊富な知恵とアイディアを提供する。（「BOOK」データベースより）</description>
+    <keyword>数学</keyword>
+    <keyword>入門</keyword>
+    <ims:img>2.jpg</ims:img>
+  </book>
+  <book>
+    <title name="ジャンル３">数学ガール</title>
+    <description>「僕」の心をときめかす、数式と二人の少女。オイラー生誕300年に捧ぐ魅惑の数学物語。（「BOOK」データベースより）</description>
+    <keyword>数学</keyword>
+    <keyword>小説</keyword>
+    <ims:img>3.jpg</ims:img>
+  </book>
+</booklist>
+</feed>

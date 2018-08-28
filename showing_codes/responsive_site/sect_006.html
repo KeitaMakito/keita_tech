@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>織田信長の紹介</title>
+<link rel="stylesheet" href="css/style-pc.css">
+<link rel="stylesheet" href="css/style-tb.css" media="only screen and (min-width:640px) and (max-width:979px)">
+<link rel="stylesheet" href="css/style-sp.css" media="only screen and (max-width:639px)">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+
+//スライド設定
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+//トグルメニュー
+$(function() {
+	$('#navToggle').click(function(){
+		$('header').toggleClass('openNav');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div id="title">
+      <h1><a href="index.html"><img src="images/logo.png" alt="ロゴ"></a></h1>
+    </div>
+    <div id="navToggle">
+      <div> <span></span> <span></span> <span></span> </div>
+    </div>
+    <!--#navToggle END-->
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main_image">
+    <div id="slideshow"> <img src="images/top_image001.jpg" alt="Slideshow Image 1" class="active" /> <img src="images/top_image001_2.jpg" alt="Slideshow Image 2" /> <img src="images/top_image002.jpg" alt="Slideshow Image 3" /> <img src="images/top_image002_2.jpg" alt="Slideshow Image 4" /> <img src="images/top_image003.jpg" alt="Slideshow Image 5" /> <img src="images/top_image004.jpg" alt="Slideshow Image 6" /> </div>
+  </div>
+  <article>
+    <div id="content">
+      <h2>織田信長の紹介</h2>
+      <img src="images/pict006.jpg" alt="" class="alignright">   
+      <img src="images/pict006_2.jpg" alt="" class="alignright"> 
+      <h3><img src="images/icon.png" alt=""/>プロフィール</h3>
+      <h4>戦国時代から安土桃山時代にかけての武将・戦国大名。三英傑の一人。<br>尾張国（現在の愛知県）の古渡城主・織田信秀の嫡男。 尾張守護代の織田氏の中でも庶流・弾正忠家の生まれであったが、父の代から主家の清洲織田氏（織田大和守家）や尾張守護の斯波氏をも凌ぐ力をつけ、家督争いの混乱を収めて尾張を統一し、桶狭間の戦いで今川義元を討ち取ると、婚姻による同盟策などを駆使しながら領土を拡大した。足利義昭を奉じて上洛すると、将軍、次いでは天皇の権威を利用して天下に号令。後には義昭を追放して室町幕府を事実上滅ぼし、畿内を中心に強力な中央集権的政権（織田政権）を確立して天下人となった。これによって他の有力な大名を抑え、戦国乱世の終焉に道筋をつけた。<br>しかし天正10年6月2日（1582年6月21日）、重臣・明智光秀に謀反を起こされ、本能寺で自害した。すでに家督を譲っていた嫡男・織田信忠も同日に二条城で自害し、信長の政権は、豊臣秀吉による豊臣政権、徳川家康が開いた江戸幕府へと引き継がれていくことになる。</h4>
+      <h4>&nbsp;</h4>
+      <h3><img src="images/icon.png" alt=""/>彼から、クリエイターを目指す君へのメッセージ</h3>
+      <h4>「理想を持ち、信念に生きよ。理想や信念を見失った者は、戦う前から負けているといえよう。そのような者は廃人と同じだ。」</h4>
+      <h4>「生まれながらに才能のある者は、それを頼んで鍛錬を怠る、自惚れる。しかし、生まれつきの才能がない者は、何とか技術を身につけようと日々努力する。心構えがまるで違う。これが大事だ。」</h4>
+      <h4>「必死に生きてこそ、その生涯は光を放つ。」</h4>
+      <h4>「攻撃を一点に集約せよ、無駄な事はするな。」</h4>
+      <h4>「器用というのは他人の思惑の逆をする者だ。」</h4>
+      <h4>「臆病者の目には、敵は常に大軍に見える。」</h4>
+      <h4>「組織に貢献してくれるのは優秀な者よりも能力は並の上だが、忠実な者の方だ。」</h4>
+    </div>
+  </article>
+  <footer>
+    <div id="submenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </div>
+    <small>Copyright &copy; Keita Makito</small> </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="hal.ac.jp.sample14_marubatu.MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/background_dark">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img00"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+
+            <ImageView
+                android:id="@+id/img01"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+
+            <ImageView
+                android:id="@+id/img02"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img03"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+
+            <ImageView
+                android:id="@+id/img04"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+
+            <ImageView
+                android:id="@+id/img05"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img06"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+
+            <ImageView
+                android:id="@+id/img07"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+
+            <ImageView
+                android:id="@+id/img08"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/background_light"
+                app:srcCompat="@android:color/background_light" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/txtRecord"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/record" />
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textResult" />
+</LinearLayout>

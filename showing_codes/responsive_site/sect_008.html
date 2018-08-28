@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>エジソンの紹介</title>
+<link rel="stylesheet" href="css/style-pc.css">
+<link rel="stylesheet" href="css/style-tb.css" media="only screen and (min-width:640px) and (max-width:979px)">
+<link rel="stylesheet" href="css/style-sp.css" media="only screen and (max-width:639px)">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+
+//スライド設定
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+//トグルメニュー
+$(function() {
+	$('#navToggle').click(function(){
+		$('header').toggleClass('openNav');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div id="title">
+      <h1><a href="index.html"><img src="images/logo.png" alt="ロゴ"></a></h1>
+    </div>
+    <div id="navToggle">
+      <div> <span></span> <span></span> <span></span> </div>
+    </div>
+    <!--#navToggle END-->
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main_image">
+    <div id="slideshow"> <img src="images/top_image001.jpg" alt="Slideshow Image 1" class="active" /> <img src="images/top_image001_2.jpg" alt="Slideshow Image 2" /> <img src="images/top_image002.jpg" alt="Slideshow Image 3" /> <img src="images/top_image002_2.jpg" alt="Slideshow Image 4" /> <img src="images/top_image003.jpg" alt="Slideshow Image 5" /> <img src="images/top_image004.jpg" alt="Slideshow Image 6" /> </div>
+  </div>
+  <article>
+    <div id="content">
+      <h2>エジソンの紹介</h2>
+      <img src="images/pict008.jpg" alt="" class="alignright">   
+      <img src="images/pict008_2.jpg" alt="" class="alignright"> 
+      <h3><img src="images/icon.png" alt=""/>プロフィール</h3>
+      <h4>アメリカ合衆国の発明家、起業家。<br>現代に存在する電化製品のほとんどの発明・改良に関わり、電球の発明で人類の夜を明るく照らし、人々の生活に電気を取り入れた。</h4>
+      <h4>&nbsp;</h4>
+      <h3><img src="images/icon.png" alt=""/>彼から、クリエイターを目指す君へのメッセージ</h3>
+      <h4>「計画通りに行かなかったとしても、それが無駄なことであるとは限らない。」</h4>
+      <h4>「私は失敗したことはない。ただ決して上手くいかなかった方法を10000通り見つけたというだけだ。」</h4>
+      <h4>「あなたの価値は、あなたがどういう人かで決まるのであり、何を持っているかで決まるのではない。」</h4>
+      <h4>「発明には、豊かな想像力と失敗の積み重ねが必要だ。」</h4>
+      <h4>「時間というものはまさしく全ての人間に与えられた唯一の資産であり、極力浪費、損失をしないよう努めるべきなのである。」</h4>
+      <h4>「自分が考える習慣を磨こうと心がけない者は、人生における最大の喜びを逃してしまっている。」</h4>
+      <h4>「世界はあらゆる人間に対して何も負うことはないが、ひとりひとりの人間はこの世界のために何かを背負っているのだ。」</h4>
+      <h4>「進歩するためには、まず不満を持たなければならない。」</h4>
+      <h4>「1％のひらめきに、99％の努力を注ぐ者、これが天才である。」</h4>
+    </div>
+  </article>
+  <footer>
+    <div id="submenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </div>
+    <small>Copyright &copy; Keita Makito</small> </footer>
+</div>
+</body>
+</html>

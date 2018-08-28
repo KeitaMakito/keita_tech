@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+
+/* 基本レイアウト */
+
+html {
+  background: url(../images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+body {
+	margin: 20px 10px;
+    font-family: "游ゴシック体","YuGothic"; font-weight: bold;
+}
+
+#wrapper {
+	width: 960px;
+	margin: auto;
+}
+
+header {
+	padding-top : 20px;
+	overflow: hidden;
+}
+
+#main_image {
+  margin-top : -150px;
+	margin-bottom: 30px;
+}
+
+a{
+	color: #5e6e6e;
+}
+
+a:hover{
+	color: #4f4f4f;
+}
+
+a:hover img {
+	opacity:0.8;
+	transition : 0.7s;
+}
+
+/* ナビゲーションメニュー */
+
+nav {
+	float: right;
+	font-size: 22px;
+	margin-top : -254px;
+	margin-left : 200px;
+	padding-top: 0px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	list-style-type: none;
+	float: left;
+}
+
+nav li a {
+	display: block;
+	float: left;
+	margin-left: 20px;
+	text-decoration: none;
+	color: #ffeeee;
+}
+
+nav li a:hover {
+	color: #ffffff;
+}
+
+#headcomment {
+	float : left;
+	margin : -200px 0 0 250px;
+	color : white;
+}
+
+/* スライド */
+
+#slideshow {
+	position: relative;
+	height: 350px;
+}
+
+#slideshow IMG {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8;
+	opacity: 0.0;
+}
+
+#slideshow IMG.active {
+	z-index: 10;
+	opacity: 1.0;
+}
+
+#slideshow IMG.last-active {
+	z-index: 9;
+}
+
+/* コンテンツ */
+
+article {
+	overflow: hidden;
+}
+
+section {
+	float: left;
+	width: 216px;
+	margin-right: 32px;
+	margin-bottom: 25px;
+}
+
+section:nth-child(4n) {
+	margin-right: 0;
+}
+
+section img {
+	width: 216px;
+	height: auto;
+	vertical-align: bottom;
+	border: none;
+}
+
+section h2 {
+	font-size: 16px;
+	margin: 5px 0 0;
+}
+
+section p {
+	font-size: 12px;
+	margin: 10px 0;
+}
+
+section a {
+	color: #ffeaea;
+	text-decoration: none;
+	display: block;
+	overflow: hidden;
+}
+
+section a:hover {
+	color: #ffffff;
+}
+
+
+
+/* サイト名 */
+
+#title {
+	float: left;
+	margin : 250px 0 20px 210px;
+}
+
+#title h1 {
+	float: left;
+	margin: -240px 0 0 -200px;
+}
+
+/* メインイメージ */
+
+#main_image img {
+	float: left;
+	vertical-align: bottom;
+}
+
+#main_image {
+	overflow: hidden;
+}
+
+/* フッター */
+
+footer {
+	color: #cfcfcf;
+	padding: 10px Opx 20px;
+	border-top:dashed 1px;
+}
+
+footer p {
+	float: left;
+	margin: 0;
+}
+
+#submenu {
+	clear: both;
+}
+
+#submenu ul {
+	margin: 10px 0;
+	padding: 2px 0 0;
+	font-size: 14px;
+}
+
+#submenu li {
+	display: inline;
+	list-style-type: none;
+}
+
+#submenu a {
+	color: #ffeeee;
+	padding-right: 6px;
+	margin-right: 3px;
+	text-decoration: none;
+}
+
+#submenu a:hover {
+	color:#ffffff;
+}
+
+/* コピーライト */
+
+small {
+	font-size: 12px;
+}
+
+/* サブページ用 */
+
+#content{
+	width: 960px;
+	margin-bottom:25px;
+}
+
+#content p{
+	font-size:14px;
+	line-height:1.6em;
+	margin-right:430px;
+	text-align: justify;
+}
+
+#content h2{
+	font-size:30px;
+	color: #ffdddd;
+}
+
+#content h3{
+	font-size:20px;
+	color: #ffffff;
+	margin : 50px 0 50px 0;
+}
+
+#content h3 img{
+	height:20px;
+	width:20px;
+	margin:0 0 -3px 0;
+}
+
+#content td{
+	font-size:14px;
+	line-height:1.6em;
+	text-align: justify;
+}
+
+.alignleft{
+  float:left;
+  clear:left;
+  margin:3px 20px 10px 0;
+}
+
+.alignright{
+  float:right;
+  clear:right;
+  margin:3px 0 10px 20px;
+}
+
+h4 {
+	color : #ffffff;
+	line-height : 1.5;
+}
+
+p {
+	color : #ffffff;
+}
+
+table {
+	color : #ffffff;
+}
+
+tr {
+	line-height : 3;
+}
+
+th {
+	background-color : rgba(100,100,255,0.8);
+}
+
+td {
+	background-color : rgba(100,100,255,0.5);
+
+}

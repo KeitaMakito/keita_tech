@@ -1,0 +1,72 @@
+﻿CakePhp３
+
+ＰＨＰのフレームワーク
+
+規則(命令規則やファイルの場所など)が大事
+
+
+ルールさえ守れば、簡単にシステム構築ができる。
+
+ＭＶＣフレームワーク
+
+Model : モデル
+ＤＢとのやりとり、データの加工
+
+ビュー : 画面表示 レイアウトもそのビューの中の１つ
+        index.ctpもビューの１つ
+        ビューファイルといえば、ctp
+        検索するシステムでは、検索窓にあたる
+
+Controller : コントローラー
+            全体のコントロール(プログラムを書くところ　forとかifとか)
+            検索を実際にやって、検索結果を持ってくる役割
+            $this->setで、ビューに送る(検索結果を表示する)
+            indexとかそういうページごとにアクションメソッドを作る( これがpublic function index(){} )
+            １アクション１ビュー
+
+            つまり
+
+            MomaController.phpを作る
+
+            その中に public function goods(){} を入れると、/moma/goods/が出来る。
+
+
+フォルダ構成
+
+config：設定ファイル
+plugins：プラグインを入れるところ
+src：ソースコード
+webroot：js,css,imageとかリソースファイルを置くところ
+
+srcフォルダの構成
+
+Controller：コントローラーファイルを置く
+
+Model：モデルのファイルを置く
+
+View：ビーのファイルを置く
+Template：ビーのファイルを置く
+
+・コントローラー
+src/Controller以下にある
+＜コントローラーファイルの命名規則＞
+複数形、アッパーキャメル記法
+最後にControllerがつく。
+モデルに関連させるために複数形でかくのが基本だけど、単数形でも動く
+
+例)　ModelsController.php
+コントローラー内には、アクションメソッドを書くことができる
+
+例)
+class ModelsController extends AppController {
+  ～ この部分が、アクションメソッド ～
+  public function test(){
+    ～
+  }
+}
+
+
+ＵＲＬ規則
+http://ドメイン名/コントローラー名/アクション名
+
+例) http://localhost/models/test/

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.7/dist/tesseract.js'></script>
+	<title>Document</title>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="msg"></div>
+	<script>
+		
+
+Tesseract
+  // (読み込む画像, 言語) jpeg || png
+  .recognize('./resheet2_mini.jpg', {lang: 'jpn'}) //exp: jpn, eng
+  //.ImageLike('media', lang)  //* browser only img || video || canvas
+  .progress(function(p) {
+    // 進歩状況の表示
+    // console.log('progress', p)
+    $('.msg').html('now analysing');
+  })
+  // 結果のコールバック
+  .then(function(result) {
+  	
+  	var msg = "";
+  	$(result.words).each(function(){
+  		msg += this.choices[0].text + "<br>";
+  		// console.log(this.choices[0].text);
+  	});
+  	$('.msg').html(msg);
+    // console.log(result.words[1].choices[0].text);
+});
+
+	</script>	
+</body>
+</html>
