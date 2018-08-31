@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>スティーブ・ジョブズの紹介</title>
+<link rel="stylesheet" href="css/style-pc.css">
+<link rel="stylesheet" href="css/style-tb.css" media="only screen and (min-width:640px) and (max-width:979px)">
+<link rel="stylesheet" href="css/style-sp.css" media="only screen and (max-width:639px)">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+
+//スライド設定
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+//トグルメニュー
+$(function() {
+	$('#navToggle').click(function(){
+		$('header').toggleClass('openNav');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div id="title">
+      <h1><a href="index.html"><img src="images/logo.png" alt="ロゴ"></a></h1>
+    </div>
+    <div id="navToggle">
+      <div> <span></span> <span></span> <span></span> </div>
+    </div>
+    <!--#navToggle END-->
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main_image">
+    <div id="slideshow"> <img src="images/top_image001.jpg" alt="Slideshow Image 1" class="active" /> <img src="images/top_image001_2.jpg" alt="Slideshow Image 2" /> <img src="images/top_image002.jpg" alt="Slideshow Image 3" /> <img src="images/top_image002_2.jpg" alt="Slideshow Image 4" /> <img src="images/top_image003.jpg" alt="Slideshow Image 5" /> <img src="images/top_image004.jpg" alt="Slideshow Image 6" /> </div>
+  </div>
+  <article>
+    <div id="content">
+      <h2>スティーブ・ジョブズの紹介</h2>
+      <img src="images/pict001.jpg" alt="" class="alignright">   
+      <img src="images/pict001_2.jpg" alt="" class="alignright"> 
+      <h3><img src="images/icon.png" alt=""/>プロフィール</h3>
+      <h4>1955年生まれ。1976年、スティーブ・ウォズニアックとともに、ホームコンピュータ「Apple I」を開発。その後「Apple II」を開発し、大ヒット。「Apple社」を設立。<br>1984年、「Macintosh」を発売。現在のiPhoneにも通じる「直感的な操作」はもちろん、そのCMも話題をさらう。しかし、ここでジョブズは「Macintosh」の需要予測を誤ったため、Appleが初の赤字を計上し、従業員の20%を解雇する事態になってしまい、Appleを追い出されてしまった。<br>しかし、彼はすぐに立ち直り、その年に教育やビジネス向けの高性能コンピューター（ワークステーション）を開発、製造する会社「NeXT」を設立。<br>1986年には、ルーカスフィルム社のコンピュータ・アニメーション部門を1,000万ドルで買収。これが後に「トイ・ストーリー」や「ファインディング・ニモ」などを製作するあの有名な「ピクサー」である。<br>2006年、「ピクサー」はディズニーに買収され、ジョブズもディズニーの役員に就任。<br>ジョブズがいなくなったApple社は、経営が傾き始め、次期Mac OSの技術を外部に求め始めた。<br>そこで、ジョブズは、「NeXT」で開発していた技術を「Apple社」に売り込み、その結果「Apple」は「NeXT」を買収。こうしてジョブズは1996年、「Apple社」に復帰した。<br>1998年、ジョブズはiMacを販売。それまでのPCは無骨な外見が当たり前だったが、スケルトンでデザイン性に優れたiMacは大ヒットし、「Appleの復活」を人々に印象付けた。そして、2000年、復帰以来ずっと断っていたCEO就任を受諾した。<br>2001年には、iPodとiTunesを発表し、音楽業界にも参入。そして、2007年、初代iPhoneを発表。<br>翌年iPhone 3Gを発表した時には癌の転移があり、容態は深刻であった。手術などを経て一旦は回復するも、2010年に悪化。<br>2011年に、ティム・クックを後任に指名し、ジョブズはCEOを辞任。<br>そして、10月4日、iPhone 4Sが発表された翌日に56歳という若さでこの世を去った。</h4>
+      <h4>&nbsp;</h4>
+      <h3><img src="images/icon.png" alt=""/>彼から、クリエイターを目指す君へのメッセージ</h3>
+      <h4>「量より質の方が大事。二塁打2本よりも、ホームラン1本の方が価値はずっと高い。」</h4>
+      <h4>「何か1つのことが上手くいったら、そこにいつまでも留まらずに、別の素晴らしいことをやるべきだ。次にするべきことを見つけろ。」</h4>
+      <h4>「仕事は人生の大部分を占める。心からの満足を得る唯一の方法は、素晴らしいと思える仕事をすること。そして素晴らしい仕事をするには、自分がやっていることを愛することだ。それがまだ見つかっていないのなら、探し続けろ。」</h4>
+      <h4>「アップル社をクビになったことは、人生で起こった最高の出来事だった。成功の重さは、再び初心者になって軽くなった。自由になり、人生で一番クリエイティブな時期を過ごすことができた。」</h4>
+      <h4>「自身がクオリティの基準となれ。高い質を期待される環境に慣れていない者もいるのだから。」</h4>
+      <h4>「自分はいつか死ぬという事実を覚えておくことは、自分には失うものがあるという考えを避けるのに最良の方法である。自分は裸だ、何も持って無いと考えるのだ。そうすれば、自分の心に従うしかなくなるだろう。」</h4>
+      <h4>「毎朝、鏡の中の自分に問いかけてきた。「もしも今日が人生最後の日だとしたら、今日やろうとしていることをやりたいと思うだろうか？」と。NOと答える日が何日も続くようであれば、何かを変えなければならないということだ。」</h4>
+      <h4>「人生において、僕が気に入ってる事はお金がかからない事ばかりだ。結局、僕らが持っている一番貴重な資産は、（お金ではなく）時間なんだよ。」</h4>
+      <h4>「点と点は、先を見ながらは繋げない。過去を振り返ることで繋げるものだ。だからその点と点が将来繋がると、信じなければならない。自分の勇気でも、運命でも、人生でも、カルマでも、何かを信じなければならない。この方法で失敗したことはない。この方法は私の人生を変えてくれた。」</h4>
+      <h4>「時間は限られているのだから、誰かの人生を生きて無駄にしてはいけない。こうあるべきだという既成概念に囚われる事は、他の人間の考えに従って生きているのと同じだ。」</h4>
+      <h4>「他者の意見に耳を傾け過ぎて、自分の心の声がかき消されてはいけない。最も大事なのは、自分の心と直観に従う勇気を持つことだ。あなたは、すでにどうなりたいかを直感的に知っているのだから。それ以外の全ては重要ではない。」</h4>
+      <h4>「自分がもうすぐ死ぬという事実は、大きな決断をする手助けをしてくれる、人生で最高のツールだ。外部からの期待、プライド、恥をかいたり失敗したりすることへの怖れなど、ほとんど全てのものは死と向き合うと消え去る。そして本当に大切なものだけを残してくれるんだ。」</h4>
+      <h4>「シンプルにするっていうのは、複雑である事よりずっと難しいんだ。シンプルなものを生み出すには、思考をシンプルにしなければならないからだ。しかしそうする価値はある。そこに到達できれば、山をも動かせるからだ。」</h4>
+      <h4>「死んだ時に墓場で一番のお金持ちになりたいとは思わない。私にとって重要なのは、夜眠るときに自分たちは素晴らしいことをしたと言えることだ。」</h4>
+      <h4>「成功する起業家と失敗する起業家を分ける要素の半分は、純粋に忍耐力であると確信している。」</h4>
+      <h4>「テクノロジーは重要ではない。大事なのは、人は賢いということ、そして人を信じること。人にツールを与えれば、それを使って素晴らしいことをするだろう。」</h4>
+      <h4>「ただお客さんの望みを聞いて、それを与えようとしてはいけない。望みどおりのものを作る頃には、お客さんは別の新しいものを欲しがるだろう。」</h4>
+      <h4>「日本はとても興味深い。彼らはコピー商品を作る、と言う人もいる。私は今ではそう思わない。彼らは物を作り変えているのだ。すでに発明されている物を、完全に理解するまで研究する。時には、発明者よりも理解していることがある。」</h4>
+      <h4>「年配の人たちは「これは何？」と尋ねる。でも少年は「これで何ができるの？」と尋ねる。」</h4>
+      <h4>「革新的なことをしていると、時には過ちを犯す。ベストなのは間違いをさっさと認め、次のイノベーションの改善に取りかかること。」</h4>
+      <h4>「やってきたことと同じぐらい、やらなかったことにも誇りを持っている。イノベーションとは1000のことにノーと言うようなものだからだ。」</h4>
+      <h4>「人は脳をオフにするためにテレビを見る。そして、脳をオンにしたいときに、パソコンを使う。」</h4>
+      <h4>「先頭を歩く人（リーダー）と、それについていく人（フォロワー）の違いは、イノベーションを起こすかどうかだ。」</h4>
+      <h4>「イノベーションは、廊下での立ち話や、夜10時半に新しいアイデアを伝える電話、またはある問題についての今までの考えに穴を開けるような気づきから生まれる。」</h4>
+    </div>
+  </article>
+  <footer>
+    <div id="submenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </div>
+    <small>Copyright &copy; Keita Makito</small> </footer>
+</div>
+</body>
+</html>

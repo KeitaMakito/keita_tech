@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>AJAX</title>
+<link rel="stylesheet" type="text/css" href="css/style3.css" />
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+
+$(function(){
+
+	//テキストボックスにカーソルが入ったら実行
+
+
+
+	//テキストボックスに１文字入力するたびに実行
+	$("#keyword").keyup(
+
+		function(){
+
+		//テキストボックスの中身を取得
+		var msg = $('#keyword').val();
+
+		//post3.phpと通信
+		$.ajax({
+			type:"POST",
+			url:"post3.php",
+			data:{
+				//phpに送るもの
+				keyword:msg
+			}
+		}).done(sc).fail(er);
+
+	});
+
+	function sc(data){
+		//画面に表示
+		$("#kekka").html(data);
+
+	}
+	function er(){
+		alert("通信エラー");
+	}
+
+
+
+
+});
+
+</script>
+</head>
+<body>
+<div id="black">
+	<h2><img src="img/icon.png" />Realtime Goods Search</h2>
+	<input type="text" id="keyword" />
+	<div id="kekka"></div>
+</div>
+</body>
+</html>

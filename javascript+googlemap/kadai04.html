@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WA31マップ課題</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- google Maps API　を使うための記述 -->
+     <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+
+        //mapオブジェクト（表示するmap）
+        var map;
+        var n = 0;
+        var speed = 10;
+
+        //map初期化関数
+        function initialize() {
+
+            //halの位置をマップ用の座標に変換
+            var hal = new google.maps.LatLng(35.691634, 139.696744);
+            var heaven = new google.maps.LatLng(52.521688, 5.732948);
+            var tokyo = new google.maps.LatLng(35.659051, 139.745347);
+            var tokyo2 = new google.maps.LatLng(35.659051, 139.74600);
+            var tokyo3 = new google.maps.LatLng(35.659051, 139.74800);
+
+            var spot1 = new google.maps.LatLng(35.798241, 139.722668);
+            var spot2 = new google.maps.LatLng(35.801726, 139.716784);
+            var spot3 = new google.maps.LatLng(35.751450, 139.738733);
+            var spot4 = new google.maps.LatLng(35.671993, 139.694870);
+            var spot5 = new google.maps.LatLng(35.702289, 139.767910);
+
+
+
+
+
+            //スタイル設定
+            var mapStyles =
+            [
+                {
+                    featureType: "all", //省略可
+                    elementType: "all", //省略可
+                    stylers: [
+                        { hue: "#000055" }, //色   #000000?#ffffff
+                        { saturation: 50 },  //彩度 -100～100
+                        { lightness: 50 }, //明度 -100～100
+                        { gamma: 1.0 },    //コントラスト 高い(<1) 低い(>1)
+                    ]
+                }
+
+            ];
+
+            // var myStyles = ;
+
+
+            // マップ表示に必要なオプション
+            var mapOptions = {
+                //地図の中心地
+                center:tokyo,
+                //ズーム
+                zoom:18,
+                //マップの表示方法の設定
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+                //各種オプション設定
+                panControlOptions: {
+                    position: google.maps.ControlPosition.TOP_RIGHT
+                },
+
+                //スタイル設定
+                styles:mapStyles
+            };
+
+            // マップを id="mapArea" に表示
+            map = new google.maps.Map(document.getElementById("mapArea"), mapOptions);
+
+
+            //マーカー設置
+            var marker1 = new google.maps.Marker({
+              position:spot1,
+              map:map,animation:google.maps.Animation.DROP,icon:"img/chara1.png"
+            });
+            var marker2 = new google.maps.Marker({
+              position:spot2,
+              map:map,animation:google.maps.Animation.DROP,icon:"img/chara2.png"
+            });
+            var marker3 = new google.maps.Marker({
+              position:spot3,
+              map:map,animation:google.maps.Animation.DROP,icon:"img/chara3.png"
+            });
+						var marker4 = new google.maps.Marker({
+              position:spot4,
+              map:map,animation:google.maps.Animation.DROP,icon:"img/chara4.png"
+            });
+						var marker5 = new google.maps.Marker({
+              position:spot5,
+              map:map,animation:google.maps.Animation.DROP,icon:"img/chara5.png"
+            });
+
+
+
+
+            // インフォウィンドウ１号を作成
+            var info1 = new google.maps.InfoWindow({
+              content:'<img src="./img/spot1.jpg"><h3>慶太の家の近所にある神社だ。ここで願い事をすると、かなりの確率で叶うんだってよ。</h3>',
+              position:new google.maps.LatLng(35.798241, 139.722668)
+            });
+            //インフォウィンドウ１号をmapに表示
+            info1.close(map,marker1);
+            // インフォウィンドウ１号をmarkerに開く
+            // クリックイベントを追加
+            google.maps.event.addListener(
+              marker1,'click',function(){
+                info1.open(map,marker1);
+              }
+            );
+
+						// インフォウィンドウ２号を作成
+            var info2 = new google.maps.InfoWindow({
+              content:'<img src="./img/spot2.jpg"><h3>慶太が住んでる家の駅の西口にあるんだって。あれ？あそこで遊んでる大きい子、慶太じゃない？</h3>',
+              position:new google.maps.LatLng()
+            });
+            //インフォウィンドウ２号をmapに表示
+            info2.close(map,marker2);
+            // インフォウィンドウ２号をmarkerに開く
+            // クリックイベントを追加
+            google.maps.event.addListener(
+              marker2,'click',function(){
+                info2.open(map,marker2);
+              }
+            );
+
+						// インフォウィンドウ３号を作成
+            var info3 = new google.maps.InfoWindow({
+              content:'<img src="./img/spot3.jpg"><h3>慶太が住んでる駅から電車で３駅のところにある公園だ。春になると桜が綺麗なんだってよ。</h3>',
+              position:new google.maps.LatLng()
+            });
+            //インフォウィンドウ３号をmapに表示
+            info3.close(map,marker3);
+            // インフォウィンドウ３号をmarkerに開く
+            // クリックイベントを追加
+            google.maps.event.addListener(
+              marker3,'click',function(){
+                info3.open(map,marker3);
+              }
+            );
+
+						// インフォウィンドウ４号を作成
+            var info4 = new google.maps.InfoWindow({
+              content:'<img src="./img/spot4.jpg"><h3>東京都渋谷区にある公園だ。所轄は東京都建設局、指定管理者は東京都公園協会で、代々木公園管理事務所が管理しているんだと。</h3>',
+              position:new google.maps.LatLng()
+            });
+            //インフォウィンドウ４号をmapに表示
+            info4.close(map,marker4);
+            // インフォウィンドウ４号をmarkerに開く
+            // クリックイベントを追加
+            google.maps.event.addListener(
+              marker4,'click',function(){
+                info4.open(map,marker4);
+              }
+            );
+
+						// インフォウィンドウ５号を作成
+            var info5 = new google.maps.InfoWindow({
+              content:'<img src="./img/spot5.jpg"><h3>「神田明神は、東京都千代田区外神田二丁目に鎮座する神社。正式名称『神田神社』。神田祭をおこなう神社として知られる。神田・日本橋・秋葉原・大手町・丸の内・旧神田市場・築地魚市場など108か町会の総氏神である。旧社格は府社。現在は神社本庁の別表神社となっている。また旧准勅祭社の東京十社の一社である。」って書いてあったぜ。嘘じゃないからな。</h3>',
+              position:new google.maps.LatLng()
+            });
+            //インフォウィンドウ５号をmapに表示
+            info5.close(map,marker5);
+            // インフォウィンドウ５号をmarkerに開く
+            // クリックイベントを追加
+            google.maps.event.addListener(
+              marker5,'click',function(){
+                info5.open(map,marker5);
+              }
+            );
+
+            // mapをクリックしたイベントを追加
+            google.maps.event.addListener(
+              map,'click',function(){
+                info1.close(map,marker1);
+                info2.close(map,marker2);
+                info3.close(map,marker3);
+                info3.close(map,marker4);
+                info3.close(map,marker5);
+              }
+            );
+
+
+
+            // 下のボタンにイベント追加
+            btns = document.getElementsByClassName('select_action');
+
+            btns[0].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot1);
+                // マップタイプの変更
+                map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+            });
+            btns[1].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot1);
+									// マップタイプの変更
+	                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+            });
+            btns[2].addEventListener('click',
+                function(){
+									// ズームアップ
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z+1);
+	                alert(z);
+            });
+            btns[3].addEventListener('click',
+                function(){
+									// ズームアウト
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z-1);
+	                alert(z);
+            });
+
+						btns[4].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot2);
+                // マップタイプの変更
+                map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+            });
+            btns[5].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot2);
+									// マップタイプの変更
+	                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+            });
+            btns[6].addEventListener('click',
+                function(){
+									// ズームアップ
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z+1);
+	                alert(z);
+            });
+            btns[7].addEventListener('click',
+                function(){
+									// ズームアウト
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z-1);
+	                alert(z);
+            });
+
+						btns[8].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot3);
+                // マップタイプの変更
+                map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+            });
+            btns[9].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot3);
+									// マップタイプの変更
+	                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+            });
+            btns[10].addEventListener('click',
+                function(){
+									// ズームアップ
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z+1);
+	                alert(z);
+            });
+            btns[11].addEventListener('click',
+                function(){
+									// ズームアウト
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z-1);
+	                alert(z);
+            });
+
+						btns[12].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot4);
+                // マップタイプの変更
+                map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+            });
+            btns[13].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot4);
+									// マップタイプの変更
+	                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+            });
+            btns[14].addEventListener('click',
+                function(){
+									// ズームアップ
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z+1);
+	                alert(z);
+            });
+            btns[15].addEventListener('click',
+                function(){
+									// ズームアウト
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z-1);
+	                alert(z);
+            });
+
+						btns[16].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot5);
+                // マップタイプの変更
+                map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+            });
+            btns[17].addEventListener('click',
+                function(){
+									// 中心地変更
+	                map.setCenter(spot5);
+									// マップタイプの変更
+	                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+            });
+            btns[18].addEventListener('click',
+                function(){
+									// ズームアップ
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z+1);
+	                alert(z);
+            });
+            btns[19].addEventListener('click',
+                function(){
+									// ズームアウト
+	//                map.setZoom(2);
+
+	                // 問題:ボタンを押すたびに１ずつズームアウトしていくプログラムを書く
+	                // map.getZoom();を使う。
+	                var z = map.getZoom();
+	                map.setZoom(z-1);
+	                alert(z);
+            });
+
+
+// ここからオススメスポット関係
+
+						spots = document.getElementsByClassName('select_place');
+
+            spots[0].addEventListener('click',
+                function(){
+
+                // 中心地変更
+                map.setCenter(spot1);
+								//移動
+                // map.panTo(上で定義した変数);　これは、上で定義した変数の位置に移動する
+                map.panTo(spot1);
+					      menu_select1.style.display = "block";
+					      menu_select2.style.display = "none";
+					      menu_select3.style.display = "none";
+					      menu_select4.style.display = "none";
+					      menu_select5.style.display = "none";
+            });
+						spots[1].addEventListener('click',
+                function(){
+
+                // 中心地変更
+                map.setCenter(spot2);
+								//移動
+                // map.panTo(上で定義した変数);　これは、上で定義した変数の位置に移動する
+                map.panTo(spot2);
+								menu_select1.style.display = "none";
+					      menu_select2.style.display = "block";
+					      menu_select3.style.display = "none";
+					      menu_select4.style.display = "none";
+					      menu_select5.style.display = "none";
+            });
+						spots[2].addEventListener('click',
+                function(){
+
+                // 中心地変更
+                map.setCenter(spot3);
+								//移動
+                // map.panTo(上で定義した変数);　これは、上で定義した変数の位置に移動する
+                map.panTo(spot3);
+								menu_select1.style.display = "none";
+					      menu_select2.style.display = "none";
+					      menu_select3.style.display = "block";
+					      menu_select4.style.display = "none";
+					      menu_select5.style.display = "none";
+            });
+						spots[3].addEventListener('click',
+                function(){
+
+                // 中心地変更
+                map.setCenter(spot4);
+								//移動
+                // map.panTo(上で定義した変数);　これは、上で定義した変数の位置に移動する
+                map.panTo(spot4);
+								menu_select1.style.display = "none";
+					      menu_select2.style.display = "none";
+					      menu_select3.style.display = "none";
+					      menu_select4.style.display = "block";
+					      menu_select5.style.display = "none";
+            });
+						spots[4].addEventListener('click',
+                function(){
+
+                // 中心地変更
+                map.setCenter(spot5);
+								//移動
+                // map.panTo(上で定義した変数);　これは、上で定義した変数の位置に移動する
+                map.panTo(spot5);
+								menu_select1.style.display = "none";
+					      menu_select2.style.display = "none";
+					      menu_select3.style.display = "none";
+					      menu_select4.style.display = "none";
+					      menu_select5.style.display = "block";
+            });
+
+
+            // オーバーレイ
+            var lat = 35.691529;
+            var lng = 139.696872;
+
+            //ironman を配置
+
+
+
+
+            //飛行機
+            var player = document.getElementById("player");
+
+            // キーをおされたときに実行
+            document.onkeydown = function(e) {
+
+                if (e != null) keyCode = e.which;
+                //IE
+                else keyCode = event.keyCode;
+
+                //console.logでキーコードを確認
+                console.log(keyCode);
+
+                // 上下左右のキーで回転、スペースキーで飛行機が向いている向きに
+                // 移動するようにしてみよう
+
+                // 上に行く　上矢印は３８番。コンソールログを見れば、番号がわかる。
+                // console.log(keyCode);って、書いてあるから
+                if(keyCode==38){
+                //  mapを下に移動する。
+                  map.panBy(0,-20);
+                  // 飛行機の背景
+                  player.style.backgroundPosition="0px 100px";
+                }
+
+								// 下に行く　下矢印は４０番。コンソールログを見れば、番号がわかる。
+                // console.log(keyCode);って、書いてあるから
+								if(keyCode==40){
+                //  mapを下に移動する。
+                  map.panBy(0,20);
+                  // 飛行機の背景
+                  player.style.backgroundPosition="0px 50px";
+                }
+
+								// 左に行く　下矢印は３７番。コンソールログを見れば、番号がわかる。
+                // console.log(keyCode);って、書いてあるから
+								if(keyCode==37){
+                //  mapを下に移動する。
+                  map.panBy(-20,0);
+                  // 飛行機の背景
+                  player.style.backgroundPosition="50px 0px";
+                }
+
+								// 右に行く　下矢印は３９番。コンソールログを見れば、番号がわかる。
+                // console.log(keyCode);って、書いてあるから
+								if(keyCode==39){
+                //  mapを下に移動する。
+                  map.panBy(20,0);
+                  // 飛行機の背景
+                  player.style.backgroundPosition="0px 150px";
+                }
+
+            }
+
+
+        }
+
+
+        //ジオコーディング
+        function codeAddress() {
+
+            //テキストボックスの値を取得
+            var address = document.getElementById("address").value;
+
+            var geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode( { 'address': address}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+
+                //指定位置を取得したらやること
+
+
+
+              } else {
+                alert("error reason: " + status);
+              }
+            });
+
+        }
+
+
+
+        // 飛行機画像 回転
+        function rotateImage(){
+
+
+        }
+
+
+        // 飛行機を移動する
+        function movePlayer(){
+
+
+        }
+
+
+    //ページが準備できたら（ロードされたら）上に書いてある initialize関数を実行
+    window.onload = initialize;
+
+    </script>
+
+</head>
+
+<body>
+
+<!-- googlemapを表示するところ -->
+<div id="mapArea"></div>
+<div id="player"></div>
+
+<div id="controlBox">
+
+	<div id="spot_select">
+		<h2>写真撮影のオススメ場所</h2>
+
+		<div id="head_comment">
+			<p>ＷＥＢクリエイターを目指す人には、写真素材の収集は不可欠。<br>そこで、「ブッ飛んでる男 ＨＡＬ東京代表」の牧戸慶太が、某アニメに登場する海賊たちと共に、写真撮影のオススメ場所を紹介してみました。</p>
+		</div>
+
+		<h3 class="select_place">★ 川口神社</h3>
+		<h3 class="select_place">★ 西口公園</h3>
+		<h3 class="select_place">★ 飛鳥山公園</h3>
+		<h3 class="select_place">★ 代々木公園</h3>
+		<h3 class="select_place">★ 神田明神</h3>
+	</div>
+
+<div id="menu_select1">
+		<h3>川口神社を選びましたね。どうしますか？</h3>
+		<div class="s_a">
+	    <ul>
+		    <li class="select_action">サテライト表示</li>
+		    <li class="select_action">ロードマップ表示</li>
+		    <li class="select_action">ズームアップ</li>
+		    <li class="select_action">ズームアウト</li>
+	    </ul>
+		</div>
+		<div class="s_a_pic">
+			<img src="img/select_blook.png">
+		</div>
+</div>
+<div id="menu_select2">
+		<h3>西口公園を選びましたね。どうしますか？</h3>
+		<div class="s_a">
+	    <ul>
+		    <li class="select_action">サテライト表示</li>
+		    <li class="select_action">ロードマップ表示</li>
+		    <li class="select_action">ズームアップ</li>
+		    <li class="select_action">ズームアウト</li>
+	    </ul>
+		</div>
+		<div class="s_a_pic">
+			<img src="img/select_blook.png">
+		</div>
+</div>
+<div id="menu_select3">
+		<h3>飛鳥山公園を選びましたね。どうしますか？</h3>
+		<div class="s_a">
+	    <ul>
+		    <li class="select_action">サテライト表示</li>
+		    <li class="select_action">ロードマップ表示</li>
+		    <li class="select_action">ズームアップ</li>
+		    <li class="select_action">ズームアウト</li>
+	    </ul>
+		</div>
+		<div class="s_a_pic">
+			<img src="img/select_blook.png">
+		</div>
+</div>
+<div id="menu_select4">
+		<h3>代々木公園を選びましたね。どうしますか？</h3>
+		<div class="s_a">
+	    <ul>
+		    <li class="select_action">サテライト表示</li>
+		    <li class="select_action">ロードマップ表示</li>
+		    <li class="select_action">ズームアップ</li>
+		    <li class="select_action">ズームアウト</li>
+	    </ul>
+		</div>
+		<div class="s_a_pic">
+			<img src="img/select_blook.png">
+		</div>
+</div>
+<div id="menu_select5">
+		<h3>神田明神を選びましたね。どうしますか？</h3>
+		<div class="s_a">
+	    <ul>
+		    <li class="select_action">サテライト表示</li>
+		    <li class="select_action">ロードマップ表示</li>
+		    <li class="select_action">ズームアップ</li>
+		    <li class="select_action">ズームアウト</li>
+	    </ul>
+		</div>
+		<div class="s_a_pic">
+			<img src="img/select_blook.png">
+		</div>
+</div>
+
+
+</div>
+</body>
+</html>

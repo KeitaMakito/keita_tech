@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>偉人の特徴</title>
+<link rel="stylesheet" href="css/style-pc.css">
+<link rel="stylesheet" href="css/style-tb.css" media="only screen and (min-width:640px) and (max-width:979px)">
+<link rel="stylesheet" href="css/style-sp.css" media="only screen and (max-width:639px)">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+
+//スライド設定
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+//トグルメニュー
+$(function() {
+	$('#navToggle').click(function(){
+		$('header').toggleClass('openNav');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div id="title">
+      <h1><a href="index.html"><img src="images/logo.png" alt="ロゴ"></a></h1>
+    </div>
+    <div id="navToggle">
+      <div> <span></span> <span></span> <span></span> </div>
+    </div>
+    <!--#navToggle END-->
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main_image">
+    <div id="slideshow"> <img src="images/top_image001.jpg" alt="Slideshow Image 1" class="active" /> <img src="images/top_image001_2.jpg" alt="Slideshow Image 2" /> <img src="images/top_image002.jpg" alt="Slideshow Image 3" /> <img src="images/top_image002_2.jpg" alt="Slideshow Image 4" /> <img src="images/top_image003.jpg" alt="Slideshow Image 5" /> <img src="images/top_image004.jpg" alt="Slideshow Image 6" /> </div>
+  </div>
+  <article>
+    <div id="content">
+      <h2>偉人の特徴</h2>
+      <img src="images/pict014.jpg" alt="" class="alignright">   
+      <img src="images/pict014_2.jpg" alt="" class="alignright"> 
+      <h3><img src="images/icon.png" alt=""/>偉人たちに共通すること</h3>
+      <h4>インターネットの世界が好きである。</h4>
+      <h4>長い時間をかけて、ひとつのテーマに取り組む。</h4>
+      <h4>一人の時間を楽しむことができる。</h4>
+      <h4>クリエイティブな仕事が得意である。</h4>
+      <h4>時間を大切にして、計画的に行う。</h4>
+      <h4>常にアイディアを探し続けている。</h4>
+      <h4>無理に行動するのではなく､習慣として行動する。</h4>
+      <h4>失敗や挫折をバネにし、道中も楽しむ。</h4>
+      <h4>人望がある。</h4>
+      <h4>他者との会話では聞き上手である。</h4>
+      <h4>見守るのが得意で、上司やリーダー向きである。</h4>
+      <h4>外交的な人を演じることができる。</h4>
+      <h4>自問自答が大の得意である。</h4>
+      <h4>少しの刺激で脳がよく反応する。</h4>
+    </div>
+  </article>
+  <footer>
+    <div id="submenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </div>
+    <small>Copyright &copy; Keita Makito</small> </footer>
+</div>
+</body>
+</html>

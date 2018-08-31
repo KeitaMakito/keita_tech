@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Banksy</title>
+		<script type="text/javascript">
+
+		//ページがロードされた時に実行
+window.onload = function(){
+
+    // 画像をフェードアウト
+    // imgタグを要素をgetして、全てのimgにhideクラスを指定する
+
+    // gr-info(文字情報)の要素
+    // 全てをgetして、moveRightクラスを追加する
+    // gr-infoに .moveRightをクラス名に指定する。
+
+		var img = document.getElementsByTagName("img");
+		var gr = document.getElementsByClassName("gr-info");
+		var li = document.getElementsByTagName("li");
+
+  // まずリセットする
+
+    // 画像をフェードアウト
+    for(var i=0;i<img.length;i++){
+      img[i].className = "hide";
+    }
+
+    // gr-infoを右に移動
+    for(var i=0;i<gr.length;i++){
+      gr[i].className = "gr-info moveRight";
+    }
+
+
+
+        // liタグにクリックイベントを付ける
+    for(var k=0;k<li.length;k++){
+      // liに番号を付ける
+        li[k].num = k;
+        li[k].addEventListener('click',function(){
+          for(var i=0;i<img.length;i++){
+            img[i].className = "hide";
+          }
+          for(var i=0;i<gr.length;i++){
+            gr[i].className = "gr-info moveRight";
+          }
+
+          // もしALLをクリックしたら
+          if(this.num == li.length-1){
+            for(var i=0;i<img.length;i++){
+              img[i].className = "show";
+            }
+          }else{
+          // そうでなければ対象のものだけ表示
+            img[this.num].className = "show";
+            gr[this.num].className = "gr-info moveLeft";
+          }
+        });
+      }
+}
+
+		//liをクリックしたときに実行
+		function showGraf(){
+
+
+
+
+		}
+
+		</script>
+	</head>
+	<body>
+
+		<h1 class="logo pos-a"></h1>
+
+		<!-- menu -->
+		<ul>
+			<li>01</li>
+			<li>02</li>
+			<li>03</li>
+			<li>04</li>
+			<li>All</li>
+		</ul>
+
+
+		<!-- graffiti -->
+		<div class="gr1 pos-a">
+			<img src="img/gr1.png" />
+		</div>
+		<div class="gr2 pos-a">
+			<img src="img/gr2.png" />
+		</div>
+		<div class="gr3 pos-a">
+			<img src="img/gr3.png" />
+		</div>
+		<div class="gr4 pos-a">
+			<img src="img/gr4.png" />
+		</div>
+
+
+		<!-- description -->
+		<div class="gr-info">
+			<h2>Graffiti 01</h2>
+			<p class="description">
+				Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+			</p>
+		</div>
+
+		<div class="gr-info">
+			<h2>Graffiti 02</h2>
+			<p class="description">
+				Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+			</p>
+		</div>
+
+		<div class="gr-info">
+			<h2>Graffiti 03</h2>
+			<p class="description">
+				Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it?
+			</p>
+		</div>
+
+		<div class="gr-info">
+			<h2>Graffiti 04</h2>
+			<p class="description">
+				But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
+			</p>
+		</div>
+
+
+
+	</body>
+</html>

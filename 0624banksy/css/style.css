@@ -1,0 +1,115 @@
+﻿@charset"utf-8";
+
+html{
+	height: 100%;
+}
+
+body{
+  background: url("../img/subtle_grunge.png");
+  color: rgb(13, 110, 77);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+h1{
+	padding: 0;
+	margin: 0;
+}
+
+h2{
+	font-size: 50px;
+}
+
+ul{
+	margin: 120px 0 0 20px;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index:100;
+}
+
+li{
+	list-style-type: none;
+	color: #555;
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+	padding: 0;
+	float: left;
+	text-align: center;
+	cursor:pointer;
+	/*transition:.5s;*/
+}
+
+li:hover{
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #eee;
+	height: 100%;
+	padding: 30px 0;
+}
+
+div.gr-info{
+	position: absolute;
+	top:0px;
+	width: 400px;
+	background-color: rgba(0,0,0,0.8);
+	color: #FFF;
+	padding: 50px;
+	font-size: 13px;
+	line-height: 1.8;
+	transition:0.5s;
+}
+
+.logo{
+	left: 40px;
+	top: 30px;
+	width: 200px;
+	height: 52px;
+	background-image: url('../img/logo-s.png');
+}
+
+.pos-a{
+	position: absolute;
+	opacity: 0.9;
+}
+
+.gr1{
+	left: 50%;
+	bottom: 0;
+	margin-left: -250px;
+}
+
+.gr2{
+	left:10%;
+	bottom:100px;
+}
+
+.gr3{
+	right:20%;
+	bottom:0px;
+}
+
+.gr4{
+	left:5%;
+	bottom:100px;
+}
+
+.show{
+	opacity: 1;
+	transition : 0.5s;
+}
+
+.hide{
+	opacity: 0;
+	transition : 0.5s;
+}
+
+div.moveLeft{
+	right: 0px;
+}
+
+div.moveRight{
+	right: -500px;
+}

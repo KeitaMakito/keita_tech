@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>管理人プロフ</title>
+<link rel="stylesheet" href="css/style-pc.css">
+<link rel="stylesheet" href="css/style-tb.css" media="only screen and (min-width:640px) and (max-width:979px)">
+<link rel="stylesheet" href="css/style-sp.css" media="only screen and (max-width:639px)">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+
+//スライド設定
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+//トグルメニュー
+$(function() {
+	$('#navToggle').click(function(){
+		$('header').toggleClass('openNav');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div id="title">
+      <h1><a href="index.html"><img src="images/logo.png" alt="ロゴ"></a></h1>
+    </div>
+    <div id="navToggle">
+      <div> <span></span> <span></span> <span></span> </div>
+    </div>
+    <!--#navToggle END-->
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main_image">
+    <div id="slideshow"> <img src="images/top_image001.jpg" alt="Slideshow Image 1" class="active" /> <img src="images/top_image001_2.jpg" alt="Slideshow Image 2" /> <img src="images/top_image002.jpg" alt="Slideshow Image 3" /> <img src="images/top_image002_2.jpg" alt="Slideshow Image 4" /> <img src="images/top_image003.jpg" alt="Slideshow Image 5" /> <img src="images/top_image004.jpg" alt="Slideshow Image 6" /> </div>
+  </div>
+  <article>
+    <div id="content">
+      <h2>管理人の紹介</h2>
+      <img src="images/pict013.jpg" alt="" class="alignright">   
+      <img src="images/pict013_2.jpg" alt="" class="alignright"> 
+      <h3><img src="images/icon.png" alt=""/>体は大人、頭脳は子供、迷探偵 牧戸慶太</h3>
+      <h4>【生年月日】</h4>
+      <p>１９９０年１月９日</p>
+      <h4>【好きな音楽】</h4>
+      <p>「人生を語らず」(吉田拓郎)</p>
+      <p>「チャンピオン」(アリス)</p>
+      <p>「Get Wild」(TM Network)</p>
+      <p>「ロード」(虎舞竜)</p>
+      <h4>【好きな言葉】</h4>
+      <p>『大器晩成』</p>
+      <h4>【勉強関係】</h4>
+      <p>試験などでは点数は取れないけど、バカ回答の破壊力なら、かなりの自信あり！<br>型にはまるだけが全てじゃない！<br>たとえば、算数の図形の問題で、三角形と答えなければならないところを、「おにぎりみたい」と書いた子がいたら、もし自分が教師なら迷わずマルを付ける。</p>
+      <h4>【スポーツ】</h4>
+      <p>柔道初段所持。<br>つい最近まで、近所のジムに通っていました。就職活動が終わったら、また通う予定です。</p>
+      <h4>【ちょっと自慢できること】</h4>
+      <p>ブッ飛んだ生き様が幸いして(？)、過去に２回、ラジオ番組の放送のネタになったことあります。</p>
+      <h4>【おまけ】</h4>
+      <p>１番目の写真：バナナで通話中</p>
+      <p>２番目の写真：学内展示会にて、自らの作品をプレゼン中</p>
+    </div>
+  </article>
+  <footer>
+    <div id="submenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </div>
+    <small>Copyright &copy; Keita Makito</small> </footer>
+</div>
+</body>
+</html>

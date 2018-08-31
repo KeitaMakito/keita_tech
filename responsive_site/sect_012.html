@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>山中伸弥の紹介</title>
+<link rel="stylesheet" href="css/style-pc.css">
+<link rel="stylesheet" href="css/style-tb.css" media="only screen and (min-width:640px) and (max-width:979px)">
+<link rel="stylesheet" href="css/style-sp.css" media="only screen and (max-width:639px)">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+
+//スライド設定
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+//トグルメニュー
+$(function() {
+	$('#navToggle').click(function(){
+		$('header').toggleClass('openNav');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div id="title">
+      <h1><a href="index.html"><img src="images/logo.png" alt="ロゴ"></a></h1>
+    </div>
+    <div id="navToggle">
+      <div> <span></span> <span></span> <span></span> </div>
+    </div>
+    <!--#navToggle END-->
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main_image">
+    <div id="slideshow"> <img src="images/top_image001.jpg" alt="Slideshow Image 1" class="active" /> <img src="images/top_image001_2.jpg" alt="Slideshow Image 2" /> <img src="images/top_image002.jpg" alt="Slideshow Image 3" /> <img src="images/top_image002_2.jpg" alt="Slideshow Image 4" /> <img src="images/top_image003.jpg" alt="Slideshow Image 5" /> <img src="images/top_image004.jpg" alt="Slideshow Image 6" /> </div>
+  </div>
+  <article>
+    <div id="content">
+      <h2>山中伸弥の紹介</h2>
+      <img src="images/pict012.jpg" alt="" class="alignright">   
+      <img src="images/pict012_2.jpg" alt="" class="alignright"> 
+      <h3><img src="images/icon.png" alt=""/>プロフィール</h3>
+      <h4>大阪府枚岡市（現・東大阪市）出身の日本の医学者。京都大学iPS細胞研究所所長・教授、日本学士院会員。学位は博士（医学）。その他称号としては京都市名誉市民、東大阪市名誉市民など。カリフォルニア大学サンフランシスコ校グラッドストーン研究所上級研究員、奈良先端科学技術大学院大学栄誉教授。文化勲章受章者。「成熟細胞が初期化され多能性をもつことの発見」により2012年のノーベル生理学・医学賞をジョン・ガードンと共同受賞した。</h4>
+      <h4>&nbsp;</h4>
+      <h3><img src="images/icon.png" alt=""/>彼から、クリエイターを目指す君へのメッセージ</h3>
+      <h4>「高く飛ぶためには思いっきり低くかがむ必要があるのです。」</h4>
+      <h4>「何度も読んだのは『仕事は楽しいかね？』（きこ書房）です。（中略）結局、この本のタイトルの通り、仕事も楽しむしかないのかなと思っています。」</h4>
+      <h4>「やるかやらないかの選択を迫られたとき、やらなくて後悔するくらいなら、やってから後悔しようといったメッセージには、とても共感しました。新しいチャレンジをすると、とりあえずがんばろうと思えますが、チャレンジをやめるとそこから先へ進むことは決してできないからです。いまでも新しいチャレンジをするように心がけています。」</h4>
+      <h4>「研修期間の二年間ずっと「ジャマナカ」です。「お前はほんまに邪魔や。ジャマナカや」といわれつづけました。（中略）しかし、ここで壁にぶつかったことが、研究者という新しい道につながったのです。」</h4>
+      <h4>「面接の最後、やぶれかぶれ正直に、「ぼくは薬理のことはなにもわかりません。でも、研究したいんです！　通してください！」って声を張ったんです。だいぶ後になってこのときの面接の先生から「あのとき叫ばへんかったら落としてたよ」といわれました。」</h4>
+      <h4>「研究をやめかけた時、奈良先端科学技術大学院大に拾ってもらい、一度死にかけたんだから何か面白い難しいことをやろうと思った。それも良かった。僕の大胆な思いつきにもかかわらず、研究室の人たちが本当に一生懸命実験をしてくれた。それぞれがたまたま１カ所でクロスした。それがなかったらｉＰＳ細胞はいまだに、少なくとも僕のところではできていないと思います。」</h4>
+      <h4>「研究というのはアイデアひとつ、努力で色々なものが生み出せる。日本は天然資源が限られている現実があるが、研究成果は無限に生み出せる。それが国の非常に大きな力にもなるし、病気で苦しんでおられる方の役にも立つ。一人でも多くの方が研究に参加してほしい。そのような人が安心して研究できるような環境を、私たちがさらにつくっていきたい。それに微力ながら貢献したい」</h4>
+      <h4>「僕は基本的に飽きやすい性格で、すぐに新しいことをしたくなってしまう。今までは、好きなことをやっていたらいい、僕の人生や、という感じだったんですけど、ｉＰＳ細胞と出会ってからはそうはいかない。当面は、自分の「子ども」であるこの技術を守り、ちゃんと成人するまで育てていきたいと思います。」</h4>
+      <h4>「研究は、最初から社会の役に立つようにしようと意識しすぎると、浅いものになりがちです。みんなが実用化間近の研究ばかりやりだすと、将来のイノベーションの芽が摘まれてしまいます。」</h4>
+      <h4>「研究者は役に立つかわからないものを研究すべきだし、科学研究費助成事業（科研費）のように、海のものとも山のものともつかない研究を支援する仕組みが、国全体の技術力を維持するうえで非常に大切です。」</h4>
+      <h4>「私は、本当に誰もやっていないことだったら、どんな研究でも価値があると思っています。だからこそ、若い研究者には、誰かの真似ではないか、繰り返しではないか意識してもらいたいのです。本当のイノベーションは未知の領域でしか見つからないのです。」</h4>
+      <h4>「仕事だけしていると、効率が悪くなると思います。飽きて集中力が落ちますから。ときどき仕事とはまったく関係ないことに没頭したほうが気分転換になるんですよ。」</h4>
+    </div>
+  </article>
+  <footer>
+    <div id="submenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </div>
+    <small>Copyright &copy; Keita Makito</small> </footer>
+</div>
+</body>
+</html>

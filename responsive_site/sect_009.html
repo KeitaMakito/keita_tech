@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>曹操の紹介</title>
+<link rel="stylesheet" href="css/style-pc.css">
+<link rel="stylesheet" href="css/style-tb.css" media="only screen and (min-width:640px) and (max-width:979px)">
+<link rel="stylesheet" href="css/style-sp.css" media="only screen and (max-width:639px)">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+
+//スライド設定
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+//トグルメニュー
+$(function() {
+	$('#navToggle').click(function(){
+		$('header').toggleClass('openNav');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div id="title">
+      <h1><a href="index.html"><img src="images/logo.png" alt="ロゴ"></a></h1>
+    </div>
+    <div id="navToggle">
+      <div> <span></span> <span></span> <span></span> </div>
+    </div>
+    <!--#navToggle END-->
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main_image">
+    <div id="slideshow"> <img src="images/top_image001.jpg" alt="Slideshow Image 1" class="active" /> <img src="images/top_image001_2.jpg" alt="Slideshow Image 2" /> <img src="images/top_image002.jpg" alt="Slideshow Image 3" /> <img src="images/top_image002_2.jpg" alt="Slideshow Image 4" /> <img src="images/top_image003.jpg" alt="Slideshow Image 5" /> <img src="images/top_image004.jpg" alt="Slideshow Image 6" /> </div>
+  </div>
+  <article>
+    <div id="content">
+      <h2>曹操の紹介</h2>
+      <img src="images/pict009.jpg" alt="" class="alignright">   
+      <img src="images/pict009_2.jpg" alt="" class="alignright"> 
+      <h3><img src="images/icon.png" alt=""/>プロフィール</h3>
+      <h4>沛国?県（現在の安徽省亳州市、また河南省永城市という説もある）の人。後漢末の武将、政治家。詩人、兵法家としても業績を残した。<br>後漢の丞相・魏王で、三国時代の魏の基礎を作った。廟号は太祖、謚号は武皇帝。後世では魏の武帝、魏武とも呼ばれる。</h4>
+      <h4>&nbsp;</h4>
+      <h3><img src="images/icon.png" alt=""/>彼から、クリエイターを目指す君へのメッセージ</h3>
+      <h4>「成功したければ、踏みならされた道を選ぶな」</h4>
+      <h4>「功なき臣を官せず、戦なき士を賞せず」</h4>
+      <h4>「唯才有らば、是れを挙げよ」</h4>
+      <h4>「失敗の責任は主君に、成功の功績は家臣に」</h4>
+      <h4>「進取なる者が、正義であるとは限らず、 正義なる者が、進取であるとは限らない」</h4>
+    </div>
+  </article>
+  <footer>
+    <div id="submenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="sect_013.html">管理人プロフ</a></li>
+        <li><a href="sect_014.html">偉人の特徴</a></li>
+        <li><a href="sect_015.html">ご意見</a></li>
+        <li><a href="sect_016.html">このサイトについて</a></li>
+      </ul>
+    </div>
+    <small>Copyright &copy; Keita Makito</small> </footer>
+</div>
+</body>
+</html>
