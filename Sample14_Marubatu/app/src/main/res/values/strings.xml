@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sample14_Marubatu</string>
+    <string name="title">○×ゲーム</string>
+    <string name="textResult"></string>
+    <string name="result_maruwin">○、勝った</string>
+    <string name="result_batuwin">×、勝った</string>
+    <string name="result_drew">引き分け</string>
+    <string name="replay">リプレイ</string>
+    <string name="record">○：%1$d勝\n×：%2$d勝\n引き分け：%3$d回</string>
+</resources>
