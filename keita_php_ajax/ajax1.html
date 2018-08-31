@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>AJAX</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+
+$(function(){
+
+	$(".bt").click(function(){
+
+		//テキストボックス #keywordの文字を取得
+		var keyword=$('#keyword').val();
+		//post1.phpと通信する
+		$.ajax({
+			url:"post1.php",
+			type:"post",
+			//phpに送るデータを設定
+			data:{text:keyword}
+		}).done(function(result){
+			//通信が成功して結果が返ってきたら
+			$("#kekka").html(result);
+		}).fail(function(){
+		//通信が失敗したら
+			
+		});
+	});
+});
+
+</script>
+</head>
+<body>
+
+	<img src="img/hanzawa.png" /><br />
+	
+	<input type="text" id="keyword" />
+	<input type="button" value="GO!" class="bt" />
+
+	<div id="kekka"></div>
+
+</body>
+</html>

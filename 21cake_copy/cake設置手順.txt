@@ -1,0 +1,24 @@
+cakephp3（授業用）の設置方法
+xamppを使います
+
+（１）htdocs配下に２つのzipファイルを移動、解凍する
+
+（２）解凍して作成された　cakephp-intlless-1.0.0　フォルダの名前を　intllessに変更
+
+　cakeフォルダの中のpluginsフォルダの中に　その　intlless　フォルダを移動
+
+（３）　cake\configフォルダの中にthsozaiからダウンロードした
+　　bootstrap.phpを　上書きコピー
+
+xamppを起動して　cakeフォルダにアクセスして cakeの画面が表示されていればOK
+
+
+---------------------------------
+composerを使う場合
+
+＜windowsの場合＞
+
+＜macの場合＞
+インストール途中で intl関連のwarningがでてインストールできない場合は
+intl.soをインストール、php.iniの設定変更等をする必要があります。
+

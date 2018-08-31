@@ -1,0 +1,142 @@
+﻿cakephoの課題は、ctpファイルと、Controllerフォルダを探せば、まぁなんとかなりそう。
+
+
+template3.ctpを作成
+
+temp3.cssを作成
+
+temp3にアクセスすると、indexと表示される
+
+temp3/1にアクセスすると、1と表示される
+
+
+
+
+☆必要なもの
+
+レイアウトテンプレート    Template/Layout/template3.ctp
+スタイルシート            webroot/css/temp3.css
+コントローラー            Controller/Temp3Controller.php
+		/temp3/にアクセスできるようにするから
+ビュー          Template/temp3/index.ctp
+	/temp3にアクセスできるようにするから(本当は、temp3/indexだけど、indexは省略できる。)
+
+
+
+これだけ揃ったあとで、やること
+
+
+
+<?php
+namespace App\Controller;
+
+class Temp3Controller extends
+AppController{
+    public function index(){
+      // 対応するviewファイルを無視
+//      $this->autoRender = false; // これはテンプレートで決まってるデザインを無視するという意味
+//      echo 'abc';
+    }
+/*
+
+/ppap/piko/
+にアクセスすると、
+テンプレートの画面が表示され、
+上の青緑のヘッダーの上に赤い文字で
+２と表示され、
+上の青緑のヘッダーの下に赤い文字で
+PIKO と表示されるようにする
+
+*/
+// temp3アクションを作る。
+// http://localhost/21cake/cake/temp3/temp3 にアクセスすることが出来る
+  public function temp3($num=''){   //「=''」は、何もないときはそのまんまになる。
+    $this->autoRender = false; // これはテンプレートで決まってるデザインを無視するという意味
+    echo 'mode'.$num;
+
+    // 他のメソッドを実行
+    $this -> setAction('index');
+    echo 'end';
+
+
+
+    if($num=='5'){            // http://localhost/21cake/cake/temp3/temp3/5 にアクセスする感じ
+      // リダイレクト
+      echo "5";
+    }
+    if($num=='3'){            // http://localhost/21cake/cake/temp3/temp3/3 にアクセスする感じ
+      // リダイレクト
+      echo "3";
+    }
+  }
+
+
+
+
+
+  }
+
+
+
+
+/*
+
+********************************************************************
+                              1月27日のメモ
+********************************************************************
+
+    ☆ リダイレクト
+    $this -> redirect('リダイレクト先パス');
+    例) $this -> redirect('/test/hello');
+
+    ☆ setAction
+    URLを変えずに別のアクションメソッドを実行したい場合は、setActionを使う
+    $this -> setAction('アクション名');
+    例) $this -> setAction('error');
+    return; ←ないと下の行が実行される
+
+    ☆ Ｖｉｅｗ(ビュー)
+    HTML,JSON,PDFなどの出力を担当
+    実際に表示するHTMLなどはTemplateフォルダ内にファイルを置く
+    コントローラーに設定したアクションメソッドには自動的にビューが割り当てられる。
+    例) コントローラー
+    public function index(){
+    }
+    ビューテンプレート
+    index.ctp
+
+
+    ☆ ビューファイル命名規則
+    src/Template/コントローラー名/アクション名.ctp
+    例) testController内のstudentメソッドに対応するviewは
+    src/template/Test/student.ctp
+    　　　　　　　↑キャメルケースで
+    ※ アクションメソッド名をキャメルでかいている場合は
+    アンダースユア記法でビューファイルの名前を付ける
+    例) コントローラー viewAll() → ビュー view_all.ctp
+
+
+
+    ********************************************************************
+                                  2月3日のメモ
+    ********************************************************************
+
+
+
+    Maru Controller extends {　　　　　　　　　　　　　＜ｈｔｍｌ＞
+      public function maruno(){
+                                　⇐＝＝＝＝＝＝＝＝⇒
+      }
+    }　　　　　　　　　　　　　　　　　　　　　　　　　　＜ｈｔｍｌ＞
+
+
+    /maru/maruno.ctp
+    maruがコントローラー　marunoがビュー
+
+
+
+
+
+
+
+*/
